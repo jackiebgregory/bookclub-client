@@ -5,7 +5,7 @@ import { MeetingContext } from "./MeetingProvider.js";
 
 export const MeetingForm = () => {
   const navigate = useNavigate();
-  const { createMeeting, meetings, getMeetings } = useContext(MeetingContext);
+  const { createMeeting, getMeetings } = useContext(MeetingContext);
  
 
 
@@ -42,7 +42,7 @@ export const MeetingForm = () => {
             required
             autoFocus
             className="form-control"
-            value={currentMeeting.description}
+            value={currentMeeting.title}
             onChange={changeMeetingState}
           />
         </div>
@@ -108,15 +108,15 @@ export const MeetingForm = () => {
 
           // Create the meeting
           const event = {
-            description: currentMeeting.description,
-            book: parseInt(currentMeeting.book),
+            title: currentMeeting.title,
+            author: currentMeeting.author,
             date: currentMeeting.date,
             time: currentMeeting.time,
           };
 
           // Send POST request to API
-          createMeeting(event).then(() => navigate("/meetings"));
-          // Once meeting is created, redirect user to meeting list
+          createMeeting(event).then(() => navigate("/join"));
+          // Once meeting is created, redirect user to join list
         }}
         className="btn btn-primary"
       >

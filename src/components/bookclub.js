@@ -18,7 +18,7 @@ export const BookClub = () => (
     <>
     <BrowserRouter>
     <Routes>
-        <Route path="/" element={<RequireAuth><NavBar /><ApplicationViews /></RequireAuth>}/>
+        <Route path="*" element={<RequireAuth><NavBar /><ApplicationViews /></RequireAuth>}/>
 
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>

@@ -41,7 +41,7 @@ export const MeetingProvider = (props) => {
   };
   
   const joinMeeting = (meetingId) => {
-    return fetch(`http://localhost:8000/events/${meetingId}/join`, {
+    return fetch(`http://localhost:8000/meetings/${meetingId}/join`, {
       method: "POST",
       headers: {
         Authorization: `Token ${localStorage.getItem("bc_token")}`,

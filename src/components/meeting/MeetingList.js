@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { MeetingContext } from "./MeetingProvider.js";
 
 
-export const MeetingList = (props) => {
-  const { meetings, getMeetings, joinMeeting, leaveMeeting } = useContext(MeetingContext);
+export const MeetingList = () => {
+  const { meetings, getMeetings, joinMeeting } = useContext(MeetingContext);
   const navigate = useNavigate();
 
   useEffect(() => {
