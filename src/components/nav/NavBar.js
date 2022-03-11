@@ -7,13 +7,16 @@ export const NavBar = () => {
     return (
         <ul className="navbar">
             <li className="navbar__item">
-            <Link className="nav-link" to="/">Create A Club</Link>
+            <Link className="nav-link" to="/create">Create A Club</Link>
             </li>
             <li className="navbar__item">
-            <Link className="nav-link" to="/events">Join A Club</Link>
+            <Link className="nav-link" to="/join">Join A Club</Link>
             </li>
             <li className="navbar__item">
-            <Link className="nav-link" to="/profile">Profile</Link>
+            <Link className="nav-link" to="/myclubs">My Clubs</Link>
+            </li>
+            <li className="navbar__item">
+            <Link className="nav-link" to="/profile">My Profile</Link>
             </li>
             {
                 (localStorage.getItem("bc_token") !== null) ?
