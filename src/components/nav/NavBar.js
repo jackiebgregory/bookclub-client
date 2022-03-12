@@ -7,13 +7,16 @@ export const NavBar = () => {
     return (
         <ul className="navbar">
             <li className="navbar__item">
-            <Link className="nav-link" to="/create">Create A Club</Link>
+            <Link className="nav-link" to="/books">Add a Book</Link>
             </li>
             <li className="navbar__item">
-            <Link className="nav-link" to="/join">Join A Club</Link>
+            <Link className="nav-link" to="/meetings/new">Create A Club</Link>
             </li>
             <li className="navbar__item">
-            <Link className="nav-link" to="/myclubs">My Clubs</Link>
+            <Link className="nav-link" to="/meetings/join">Join A Club</Link>
+            </li>
+            <li className="navbar__item">
+            <Link className="nav-link" to="/meetings">My Clubs</Link>
             </li>
             <li className="navbar__item">
             <Link className="nav-link" to="/profile">My Profile</Link>
