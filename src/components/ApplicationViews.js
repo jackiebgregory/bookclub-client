@@ -14,13 +14,12 @@ export const ApplicationViews = () => {
         }}
       >
 
-    
+  <MeetingProvider >
     <Routes>
-        <Route path="/" element={<MeetingProvider />}></Route>
-        <Route path="/join" element={<MeetingList />}></Route>
-        <Route path="/create" element={<MeetingForm />}></Route>
+        <Route path="/meetings" element={<MeetingList />}></Route>
+        <Route path="/meetings/new" element={<MeetingForm />}></Route>
     </Routes>
-    
+  </MeetingProvider>
       </main>
     </>
   );

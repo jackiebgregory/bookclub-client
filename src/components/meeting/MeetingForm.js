@@ -107,16 +107,17 @@ export const MeetingForm = () => {
           evt.preventDefault();
 
           // Create the meeting
-          const event = {
+          const meeting = {
             title: currentMeeting.title,
             author: currentMeeting.author,
+            location: currentMeeting.location,
             date: currentMeeting.date,
             time: currentMeeting.time,
           };
 
           // Send POST request to API
-          createMeeting(event).then(() => navigate("/join"));
-          // Once meeting is created, redirect user to join list
+          createMeeting(meeting).then(() => navigate("/meetings"));
+          // Once meeting is created, redirect user to meetings list
         }}
         className="btn btn-primary"
       >

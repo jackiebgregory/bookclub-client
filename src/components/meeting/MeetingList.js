@@ -21,7 +21,7 @@ export const MeetingList = () => {
         return (
           <section key={meeting.id} className="registration">
             <div className="registration__book">{meeting.book.title}</div>
-            <div>{meeting.description}</div>
+            <div>{meeting.location}</div>
             <div>
               {new Date(meeting.date).toLocaleDateString("en-US", {
                 weekday: "long",
@@ -37,7 +37,7 @@ export const MeetingList = () => {
       <button
   className="btn btn-2 btn-sep icon-create"
   onClick={() => {
-    navigate({ pathname: "/meetings/new" });
+    navigate({ pathname: "/meetings/join" });
   }}
 >
   Create New Book Club
@@ -47,7 +47,7 @@ export const MeetingList = () => {
               return (
                 <section key={meeting.id} className="registration">
                   <div className="registration__book">{meeting.book.title}</div>
-                  <div>{meeting.description}</div>
+                  <div>{meeting.location}</div>
                   <div>
                     {meeting.date} @ {meeting.time}
                   </div>
