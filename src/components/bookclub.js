@@ -4,6 +4,7 @@ import { ApplicationViews } from "./ApplicationViews"
 import { NavBar } from "./nav/NavBar"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
+import "./bookclub.css"
 
 
 const RequireAuth = ({children}) => {
@@ -16,6 +17,7 @@ const RequireAuth = ({children}) => {
 
 export const BookClub = () => (
     <>
+    <header>social media icons here</header>
     <BrowserRouter>
     <Routes>
         <Route path="*" element={<RequireAuth>
@@ -27,5 +29,6 @@ export const BookClub = () => (
         <Route path="/register" element={<Register />}></Route>
     </Routes>
     </BrowserRouter>
+    <footer>Parnassus Books | 3900 Hillsboro Pike Suite 14 | Nashville, TN 37215 | (615) 953-2243 | Monday to Saturday, 10am-6pm; Sunday 12pm-6pm</footer>
     </>
 )
