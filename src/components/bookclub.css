@@ -4,7 +4,19 @@ header {
   text-align: right;
 }
 
-footer {
+h2 {
+  font-size: 18px;
+  font-family: 'Mulish', sans-serif;
+}
+
+.footer-1 {
+  color: white;
+  background-color: #46667D;
+  text-decoration: none;
+  font-family: 'Mulish', sans-serif;
+}
+
+.footer-2 {
   background-color: #F2F1F1;
   font-family: 'Mulish', sans-serif;
   color: #5D5C61;
