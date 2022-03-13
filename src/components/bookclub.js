@@ -29,6 +29,19 @@ export const BookClub = () => (
         <Route path="/register" element={<Register />}></Route>
     </Routes>
     </BrowserRouter>
-    <footer>Parnassus Books | 3900 Hillsboro Pike Suite 14 | Nashville, TN 37215 | (615) 953-2243 | Monday to Saturday, 10am-6pm; Sunday 12pm-6pm</footer>
+    
+    <footer className="footer-1">
+        
+        <h2>STORE INFORMATION</h2>
+        <div>
+            <a className="footer-1" href="https://www.parnassusbooks.net/about-us">About Us</a>
+        </div>
+        <div>
+            <a className="footer-1" href="https://www.parnassusbooks.net/frequently-asked-questions">FAQ</a>
+        </div>
+        
+    </footer>
+
+    <footer className="footer-2">Parnassus Books | 3900 Hillsboro Pike Suite 14 | Nashville, TN 37215 | (615) 953-2243 | Monday to Saturday, 10am-6pm; Sunday 12pm-6pm</footer>
     </>
 )
