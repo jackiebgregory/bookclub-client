@@ -1,16 +1,10 @@
 import React, { useContext, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { BookContext } from "./BookProvider.js";
 
 export const BookForm = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const { createBook } = useContext(BookContext);
-
-  /*
-        Since the input fields are bound to the values of
-        the properties of this state variable, you need to
-        provide some default values.
-    */
   const [currentBook, setCurrentBook] = useState({
     title: "",
     author: "",
@@ -25,7 +19,7 @@ export const BookForm = () => {
 
   const changeBookAuthorState = (event) => {
     const newBookState = { ...currentBook };
-    newBookState.maker = event.target.value;
+    newBookState.author = event.target.value;
     setCurrentBook(newBookState);
   };
 
@@ -69,15 +63,15 @@ export const BookForm = () => {
 
           const book = {
             title: currentBook.title,
-            author: currenBook.author,
+            author: currentBook.author,
           };
 
           // Send POST request to your API
-          createBook(book).then(() => history.push("/books"));
+          createBook(book).then(() => navigate("/books"));
         }}
         className="btn btn-primary"
       >
-        Create
+        Add Book
       </button>
     </form>
   );
