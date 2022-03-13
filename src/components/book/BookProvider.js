@@ -13,7 +13,7 @@ export const BookProvider = (props) => {
         'Content-Type': 'application/json'
       },
       method: "POST",
-      body: JSON.stringify(game)
+      body: JSON.stringify(book)
     })
     .then((response) => response.json())
     .then(getBooks);
@@ -31,7 +31,7 @@ export const BookProvider = (props) => {
   };
 
   return (
-    <BookContext.Provider value={{ books, getBooks, createBook, }}>
+    <BookContext.Provider value={{ books, getBooks, createBook }}>
       {props.children}
     </BookContext.Provider>
   );

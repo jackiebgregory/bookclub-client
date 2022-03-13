@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import { BookContext } from "./BookProvider.js";
 
 
 export const BookList = (props) => {
   const { books, getBooks } = useContext(BookContext);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
     getBooks();
@@ -13,6 +13,14 @@ export const BookList = (props) => {
 
   return (
     <article className="books">
+      <button
+  className="btn btn-2 btn-sep icon-create"
+  onClick={() => {
+    navigate({ pathname: "/books/new" });
+  }}
+>
+  Register New Book
+</button>
       {books.map((book) => {
         return (
           <section key={`book--${book.id}`} className="book">
@@ -22,14 +30,6 @@ export const BookList = (props) => {
           </section>
         );
       })}
-      <button
-  className="btn btn-2 btn-sep icon-create"
-  onClick={() => {
-    history.push({ pathname: "/books/new" });
-  }}
->
-  Register New Book
-</button>
     </article>
   );
 };
