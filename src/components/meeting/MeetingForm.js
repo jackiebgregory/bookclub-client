@@ -40,6 +40,19 @@ export const MeetingForm = () => {
       <h2 className="bookForm__title">Schedule New Book Club Meeting</h2>
       <fieldset>
 
+      <div className="form-group">
+          <label htmlFor="clubName">Book Club Name: </label>
+          <input
+            type="text"
+            name="clubName"
+            required
+            autoFocus
+            className="form-control"
+            value={currentMeeting.clubname}
+            onChange={changeMeetingState}
+          />
+        </div>
+
         <div className="form-group">
           <label htmlFor="bookId">Book: </label>
           <select
@@ -103,6 +116,7 @@ export const MeetingForm = () => {
 
           // Create the meeting
           const meeting = {
+            clubname: currentMeeting.clubname,
             book: parseInt(currentMeeting.book),
             location: currentMeeting.location,
             date: currentMeeting.date,

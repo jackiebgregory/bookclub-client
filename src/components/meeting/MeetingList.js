@@ -20,6 +20,7 @@ export const MeetingList = () => {
       {meetings.map((meeting) => {
         return (
           <section key={meeting.id} className="registration">
+            <div>{meeting.clubname}</div>
             <div className="registration__book">{meeting.book.title}</div>
             <div>{meeting.location}</div>
             <div>
@@ -46,6 +47,7 @@ export const MeetingList = () => {
       {meetings.map((meeting) => {
               return (
                 <section key={meeting.id} className="registration">
+                  <div>{meeting.clubname}</div>
                   <div className="registration__book">{meeting.book.title}</div>
                   <div>{meeting.location}</div>
                   <div>

@@ -1,0 +1,11 @@
+.book__title {
+  outline-style: solid;
+  margin: 20px;
+  padding: 10px;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
