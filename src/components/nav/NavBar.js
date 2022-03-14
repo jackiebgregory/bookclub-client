@@ -10,16 +10,13 @@ export const NavBar = () => {
             <img scr="/logo.png" alt=""/>
             </li>
             <li className="navbar__item">
-            <Link className="nav-link" to="/books">Add a Book</Link>
+            <Link className="nav-link" to="/books">Books</Link>
             </li>
             <li className="navbar__item">
             <Link className="nav-link" to="/meetings/new">Create A Club</Link>
             </li>
             <li className="navbar__item">
-            <Link className="nav-link" to="/meetings/join">Join A Club</Link>
-            </li>
-            <li className="navbar__item">
-            <Link className="nav-link" to="/meetings">My Clubs</Link>
+            <Link className="nav-link" to="/meetings/">Join A Club</Link>
             </li>
             <li className="navbar__item">
             <Link className="nav-link" to="/profile">My Profile</Link>
