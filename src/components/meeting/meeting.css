@@ -1,0 +1,11 @@
+.registration {
+  outline-style: solid;
+  margin: 20px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .registration__book {
+  display: flex;
+} */
