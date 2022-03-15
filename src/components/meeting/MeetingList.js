@@ -17,7 +17,7 @@ export const MeetingList = () => {
       <header className="meetings__header">
         <h1>Book Club Meetings</h1>
       </header>
-      {meetings.map((meeting) => {
+      {/* {meetings.map((meeting) => {
         return (
           <section key={meeting.id} className="registration">
             <div>{meeting.clubname}</div>
@@ -34,11 +34,11 @@ export const MeetingList = () => {
             </div>
           </section>
         );
-      })}
+      })} */}
       <button
   className="btn btn-2 btn-sep icon-create"
   onClick={() => {
-    navigate({ pathname: "/meetings/join" });
+    navigate({ pathname: "/meetings/new" });
   }}
 >
   Create New Book Club
