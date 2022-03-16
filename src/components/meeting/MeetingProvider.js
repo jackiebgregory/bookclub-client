@@ -37,7 +37,6 @@ export const MeetingProvider = (props) => {
         Authorization: `Token ${localStorage.getItem("bc_token")}`,
       },
     })
-      .then((response) => response.json())
       .then(getMeetings);
   };
   
