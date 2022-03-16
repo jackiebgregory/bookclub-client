@@ -5,7 +5,7 @@ import "./meeting.css"
 
 
 export const MeetingList = () => {
-  const { meetings, getMeetings, joinMeeting } = useContext(MeetingContext);
+  const { meetings, getMeetings, joinMeeting, leaveMeeting } = useContext(MeetingContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -56,6 +56,9 @@ export const MeetingList = () => {
                   </div>
                   <button className="btn btn-2" onClick={() => joinMeeting(meeting.id)}>
                     Join
+                  </button>
+                  <button className="btn btn-2" onClick={() => leaveMeeting(meeting.id)}>
+                    Leave
                   </button>
                 </section>
               );
