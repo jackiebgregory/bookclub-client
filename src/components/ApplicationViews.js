@@ -6,6 +6,8 @@ import { BookForm } from "./book/BookForm.js";
 import { MeetingProvider } from "./meeting/MeetingProvider.js";
 import { MeetingList } from "./meeting/MeetingList.js";
 import { MeetingForm } from "./meeting/MeetingForm.js";
+import { ProfileProvider } from "./auth/ProfileProvider.js";
+import { Profile } from "./auth/Profile.js"
 
 
 export const ApplicationViews = () => {
@@ -21,6 +23,7 @@ export const ApplicationViews = () => {
 
     <BookProvider>
       <MeetingProvider >
+        <ProfileProvider>
 
         <Routes>
             <Route path="/meetings" element={<MeetingList />}></Route>
@@ -31,7 +34,12 @@ export const ApplicationViews = () => {
             <Route path="/books" element={<BookList />}></Route>
             <Route path="/books/new" element={<BookForm />}></Route>
         </Routes>
+
+        <Routes>
+            <Route path="/profile" element={<Profile />}></Route>
+        </Routes>
         
+        </ProfileProvider>
       </MeetingProvider>
     </BookProvider>
 
