@@ -18,24 +18,7 @@ export const MeetingList = () => {
       <header className="meetings__header">
         <h1>Book Club Meetings</h1>
       </header>
-      {/* {meetings.map((meeting) => {
-        return (
-          <section key={meeting.id} className="registration">
-            <div>{meeting.clubname}</div>
-            <div className="registration__book">{meeting.book.title}</div>
-            <div>{meeting.location}</div>
-            <div>
-              {new Date(meeting.date).toLocaleDateString("en-US", {
-                weekday: "long",
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
-              @ {meeting.time}
-            </div>
-          </section>
-        );
-      })} */}
+      
       <button
   className="btn btn-2 btn-sep icon-create"
   onClick={() => {
@@ -54,12 +37,18 @@ export const MeetingList = () => {
                   <div>
                     {meeting.date} @ {meeting.time}
                   </div>
-                  <button className="btn btn-2" onClick={() => joinMeeting(meeting.id)}>
-                    Join
-                  </button>
-                  <button className="btn btn-2" onClick={() => leaveMeeting(meeting.id)}>
-                    Leave
-                  </button>
+                  {meeting.joined ? (
+                    <button
+                      className="btn btn-3"
+                      onClick={() => leaveMeeting(meeting.id)}>
+                      Leave
+                    </button>
+                  ) : (
+                    <button className="btn btn-2" 
+                      onClick={() => joinMeeting(meeting.id)}>
+                      Join
+                    </button>
+              )}
                 </section>
               );
             })}
