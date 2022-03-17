@@ -9,6 +9,7 @@ export const Profile = () => {
     getProfile();
   }, []);
 
+
   return (
     <article className="profile">
       <header>
@@ -37,7 +38,7 @@ export const Profile = () => {
           {profile.meetings.map((meeting) => {
             return (
               <div key={meeting.id} className="registration">
-                <div className="registration__game">{meeting.book.title}</div>
+                <div className="registration__meeting">{meeting.book.title}</div>
                 <div>{meeting.location}</div>
                 <div>
                   {meeting.date} @ {meeting.time}

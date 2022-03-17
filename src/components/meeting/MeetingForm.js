@@ -12,6 +12,7 @@ export const MeetingForm = () => {
 
   const [currentMeeting, setCurrentMeeting] = useState({
     book: 0,
+    clubname: "",
     location: "",
     date: "",
     time: "",
@@ -41,14 +42,14 @@ export const MeetingForm = () => {
       <fieldset>
 
       <div className="form-group">
-          <label htmlFor="clubName">Book Club Name: </label>
+          <label htmlFor="clubname">Book Club Name: </label>
           <input
             type="text"
-            name="clubName"
+            name="clubname"
             required
             autoFocus
             className="form-control"
-            value={currentMeeting.clubname}
+            value={currentMeeting.clubame}
             onChange={changeMeetingState}
           />
         </div>

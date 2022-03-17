@@ -16,7 +16,7 @@ export const MeetingList = () => {
   return (
     <article className="meetings">
       <header className="meetings__header">
-        <h1>Book Club Meetings</h1>
+        <h2>Book Club Meetings</h2>
       </header>
       
       <button
@@ -54,6 +54,5 @@ export const MeetingList = () => {
             })}
 
     </article>
-    
   );
 };
