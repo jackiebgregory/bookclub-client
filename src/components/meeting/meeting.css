@@ -2,10 +2,10 @@
   outline-style: solid;
   margin: 20px;
   padding: 10px;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center; */
+  /* align-items: center; */
 }
 
-/* .registration__book {
-  display: flex;
-} */
+.registration__book {
+  align-items: center;
+}

@@ -15,6 +15,7 @@ const RequireAuth = ({children}) => {
     }
 } 
 
+
 export const BookClub = () => (
     <>
     <header>social media icons here</header>
@@ -24,7 +25,6 @@ export const BookClub = () => (
             <NavBar />
             <ApplicationViews />
             </RequireAuth>}/>
-
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
     </Routes>
