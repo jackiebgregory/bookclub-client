@@ -51,8 +51,18 @@ export const MeetingProvider = (props) => {
       .then(getMeetings);
   };
 
+  const deleteMeeting = (meetingId) => {
+    return fetch(`http://localhost:8000/meetings/${meetingId}/meetings`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Token ${localStorage.getItem("bc_token")}`,
+      },
+    })
+      .then(getMeetings);
+  };
+
   return (
-    <MeetingContext.Provider value={{ meetings, getMeetings, createMeeting, joinMeeting, leaveMeeting }}>
+    <MeetingContext.Provider value={{ meetings, getMeetings, createMeeting, joinMeeting, leaveMeeting, deleteMeeting }}>
       {props.children}
     </MeetingContext.Provider>
   );

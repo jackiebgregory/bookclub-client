@@ -34,8 +34,23 @@ export const Profile = () => {
         <header className="registrations__header">
           <h3>Your Meetings</h3>
         </header>
-        <div className="registrations">
-          {profile.meetings.map((meeting) => {
+        <h2>Meetings you are Attending</h2>
+        <div className="attending">
+          {profile.reader.attending.map((meeting) => {
+            return (
+              <div key={meeting.id} className="registration">
+                <div className="registration__meeting">{meeting.book.title}</div>
+                <div>{meeting.location}</div>
+                <div>
+                  {meeting.date} @ {meeting.time}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <h2>Meetings you are Organizing</h2>
+        <div className="organized">
+          {profile.mymeetings.map((meeting) => {
             return (
               <div key={meeting.id} className="registration">
                 <div className="registration__meeting">{meeting.book.title}</div>
