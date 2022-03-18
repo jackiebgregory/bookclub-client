@@ -7,7 +7,7 @@ export const NavBar = () => {
     return (
         <ul className="navbar">
             <li className="navbar__item">
-            <img scr="./logo.png" alt=""/>
+            <img src="https://www.parnassusbooks.net/sites/parnassusbooks.net/files/Parnassus%20Logo%20transparent%20background.png" alt="" width="150" height="50"/>
             </li>
             <li className="navbar__item">
             <Link className="nav-link" to="/">Home</Link>

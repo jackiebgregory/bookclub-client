@@ -7,7 +7,8 @@ import { MeetingProvider } from "./meeting/MeetingProvider.js";
 import { MeetingList } from "./meeting/MeetingList.js";
 import { MeetingForm } from "./meeting/MeetingForm.js";
 import { ProfileProvider } from "./auth/ProfileProvider.js";
-import { Profile } from "./auth/Profile.js"
+import { Profile } from "./auth/Profile.js";
+import { Home } from "./home/HomePage.js";
 
 
 export const ApplicationViews = () => {
@@ -24,6 +25,10 @@ export const ApplicationViews = () => {
     <BookProvider>
       <MeetingProvider >
         <ProfileProvider>
+        
+        <Routes>
+            <Route path="/" element={<Home />}></Route>
+        </Routes>
 
         <Routes>
             <Route path="/meetings" element={<MeetingList />}></Route>
