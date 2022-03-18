@@ -37,8 +37,10 @@ export const MeetingForm = () => {
   };
 
   return (
+    
     <form className="bookForm">
-      <h2 className="bookForm__title">Schedule New Book Club Meeting</h2>
+        <h2 className="page-title">Schedule New Book Club Meeting</h2>
+      
       <fieldset>
 
       <div className="form-group">

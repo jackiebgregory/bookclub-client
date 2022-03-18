@@ -14,6 +14,9 @@ export const BookList = (props) => {
 
   return (
     <article className="books">
+      <header className="meetings__header">
+        <h2>Books</h2>
+      </header>
       <button
   className="btn btn-2 btn-sep icon-create"
   onClick={() => {

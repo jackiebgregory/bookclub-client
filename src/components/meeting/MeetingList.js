@@ -16,7 +16,7 @@ export const MeetingList = () => {
   return (
     <article className="meetings">
       <header className="meetings__header">
-        <h2>Book Club Meetings</h2>
+        <h2>Join a Club</h2>
       </header>
       
       <button
@@ -49,10 +49,7 @@ export const MeetingList = () => {
                       Join
                     </button>
               )}
-                  <button className="btn btn-2" 
-                      onClick={() => deleteMeeting(meeting.id)}>
-                      Cancel
-                    </button>
+                  
                 </section>
               );
             })}
