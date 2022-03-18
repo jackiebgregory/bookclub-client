@@ -18,7 +18,17 @@ const RequireAuth = ({children}) => {
 
 export const BookClub = () => (
     <>
-    <header>social media icons here</header>
+    <header>
+        <div className="social-icons">
+        <ul>
+        <li><img src="https://www.parnassusbooks.net/sites/all/themes/contrib/santa-rosa/images/facebook.png"></img></li>
+        <li><img src="https://www.parnassusbooks.net/sites/all/themes/contrib/santa-rosa/images/twitter.png"></img></li>
+        <li><img src="https://www.parnassusbooks.net/sites/all/themes/contrib/santa-rosa/images/youtube.png"></img></li>
+        <li><img src="https://www.parnassusbooks.net/sites/all/themes/contrib/santa-rosa/images/instagram.png"></img></li>
+        <li><img src="https://www.parnassusbooks.net/sites/all/themes/contrib/santa-rosa/images/email.png"></img></li>
+        </ul>
+        </div>
+    </header>
     <BrowserRouter>
     <Routes>
         <Route path="*" element={<RequireAuth>
