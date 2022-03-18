@@ -1,7 +1,17 @@
-header {
+.socials {
   color: white;
   background-color: #46667D;
   text-align: right;
+}
+
+h2 {
+  color: white;
+  background-color: #46667D;
+  text-align: left;
+  font-family: 'Mulish', sans-serif;
+  padding: 10px;
+  
+  
 }
 
 ul {
@@ -24,10 +34,12 @@ h2 {
   background-color: #46667D;
   text-decoration: none;
   font-family: 'Mulish', sans-serif;
+ 
 }
 
 .footer-2 {
   background-color: #F2F1F1;
   font-family: 'Mulish', sans-serif;
   color: #5D5C61;
+  padding: 10px;
 }

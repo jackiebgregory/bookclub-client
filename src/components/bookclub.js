@@ -18,7 +18,7 @@ const RequireAuth = ({children}) => {
 
 export const BookClub = () => (
     <>
-    <header>
+    <header className="socials">
         <div className="social-icons">
         <ul>
         <li><img src="https://www.parnassusbooks.net/sites/all/themes/contrib/santa-rosa/images/facebook.png"></img></li>
@@ -48,8 +48,7 @@ export const BookClub = () => (
         </div>
         <div>
             <a className="footer-1" href="https://www.parnassusbooks.net/frequently-asked-questions">FAQ</a>
-        </div>
-        
+        </div>   
     </footer>
 
     <footer className="footer-2">Parnassus Books | 3900 Hillsboro Pike Suite 14 | Nashville, TN 37215 | (615) 953-2243 | Monday to Saturday, 10am-6pm; Sunday 12pm-6pm</footer>

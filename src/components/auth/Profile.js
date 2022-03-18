@@ -30,6 +30,7 @@ export const Profile = () => {
           About you: {profile.reader && profile.reader.bio}
         </div>
       </section>
+
       <section className="profile__registrations">
         <header className="registrations__header">
           <h3>Your Meetings</h3>
