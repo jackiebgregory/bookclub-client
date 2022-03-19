@@ -1,11 +1,14 @@
 import React, { useEffect, useContext } from "react";
 import { MeetingContext } from "../meeting/MeetingProvider.js";
 import { ProfileContext } from "./ProfileProvider.js";
+import { useNavigate } from "react-router-dom";
 // import "./Profile.css";
 
 export const Profile = () => {
+  const navigate = useNavigate();
   const { profile, getProfile } = useContext(ProfileContext);
   const { deleteMeeting, updateMeeting } = useContext(MeetingContext);
+  
 
   useEffect(() => {
     getProfile();
@@ -47,7 +50,8 @@ export const Profile = () => {
           {profile.reader && profile.reader.attending.map((meeting) => {
             return (
               <div key={meeting.id} className="registration">
-                <div className="registration__meeting">{meeting.book.title}</div>
+                <div>{meeting.clubname}</div>
+                <div>{meeting.book.title}</div>
                 <div>{meeting.location}</div>
                 <div>
                   {meeting.date} @ {meeting.time}
@@ -63,7 +67,8 @@ export const Profile = () => {
           {profile.reader && profile.mymeetings.map((meeting) => {
             return (
               <div key={meeting.id} className="registration">
-                <div className="registration__meeting">{meeting.book.title}</div>
+                <div>{meeting.clubname}</div>
+                <div>{meeting.book.title}</div>
                 <div>{meeting.location}</div>
                 <div>
                   {meeting.date} @ {meeting.time}
@@ -72,17 +77,16 @@ export const Profile = () => {
                       onClick={() => updateMeeting(meeting.id)}>
                       Update
                     </button></div>
-                <div><button className="" 
-                      onClick={() => deleteMeeting(meeting.id)}>
+                <div><button className="delete_button" 
+                      onClick={() => deleteMeeting(meeting.id).then(() => getProfile())}>
                       Cancel
                     </button></div>
               </div>
-            );
-          })}
+           )})}
         </div>
-
+          
       </section>
-
+          
     </article>
   );
 };
