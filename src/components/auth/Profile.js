@@ -1,9 +1,11 @@
 import React, { useEffect, useContext } from "react";
+import { MeetingContext } from "../meeting/MeetingProvider.js";
 import { ProfileContext } from "./ProfileProvider.js";
 // import "./Profile.css";
 
 export const Profile = () => {
   const { profile, getProfile } = useContext(ProfileContext);
+  const { deleteMeeting, updateMeeting } = useContext(MeetingContext);
 
   useEffect(() => {
     getProfile();
@@ -13,8 +15,9 @@ export const Profile = () => {
   return (
     <article className="profile">
       <header>
-        <h1>Your Profile</h1>
+        <h2>Your Profile</h2>
       </header>
+
       <section className="profile__info">
         <header className="profile__header">
           <h3>Your Info</h3>
@@ -35,8 +38,10 @@ export const Profile = () => {
         <header className="registrations__header">
           <h3>Your Meetings</h3>
         </header>
+        
         <h2>Meetings you are Attending</h2>
-        <div className="attending">
+
+        {/* <div>
           {profile.reader.attending.map((meeting) => {
             return (
               <div key={meeting.id} className="registration">
@@ -48,9 +53,11 @@ export const Profile = () => {
               </div>
             );
           })}
-        </div>
+        </div> */}
+
         <h2>Meetings you are Organizing</h2>
-        <div className="organized">
+       
+        {/* <div className="organized">
           {profile.mymeetings.map((meeting) => {
             return (
               <div key={meeting.id} className="registration">
@@ -59,11 +66,21 @@ export const Profile = () => {
                 <div>
                   {meeting.date} @ {meeting.time}
                 </div>
+                <div><button className="" 
+                      onClick={() => updateMeeting(meeting.id)}>
+                      Update
+                    </button></div>
+                <div><button className="" 
+                      onClick={() => deleteMeeting(meeting.id)}>
+                      Cancel
+                    </button></div>
               </div>
             );
           })}
-        </div>
+        </div> */}
+
       </section>
+
     </article>
   );
 };

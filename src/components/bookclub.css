@@ -6,13 +6,17 @@
 
 h2 {
   color: white;
-  background-color: #46667D;
+  background-color: #118C7A;
   text-align: left;
   font-family: 'Mulish', sans-serif;
   padding: 10px;
-  
-  
+
 }
+
+/* h2 {
+  font-size: 18px;
+  font-family: 'Mulish', sans-serif;
+} */
 
 ul {
   list-style: none;
@@ -24,10 +28,7 @@ li {
   margin: 2px;
 }
 
-h2 {
-  font-size: 18px;
-  font-family: 'Mulish', sans-serif;
-}
+
 
 .footer-1 {
   color: white;
