@@ -1,13 +1,13 @@
 import React, { useEffect, useContext } from "react";
 import { MeetingContext } from "../meeting/MeetingProvider.js";
 import { ProfileContext } from "./ProfileProvider.js";
-import { useNavigate } from "react-router-dom";
+import { BookContext } from "../book/BookProvider";
 // import "./Profile.css";
 
 export const Profile = () => {
-  const navigate = useNavigate();
   const { profile, getProfile } = useContext(ProfileContext);
-  const { deleteMeeting, updateMeeting } = useContext(MeetingContext);
+  const { deleteMeeting, updateMeeting, leaveMeeting } = useContext(MeetingContext);
+  const { books, deleteBook } = useContext(BookContext);
   
 
   useEffect(() => {
@@ -37,14 +37,35 @@ export const Profile = () => {
         </div>
       </section>
 
+      <header className=" ">
+          <h3>Your books</h3>
+        </header>
+
       <h2>Books You Have Added</h2>
+
+      <div>
+      {books.map((book) => {
+        return (
+          <section key={`book--${book.id}`} className="book">
+            <div className="book__title">
+              {book.title} by {book.author}
+              <div>
+              <button className="delete_button" 
+                      onClick={() => deleteBook(book.id).then(() => getProfile())}>
+                      Delete Book
+                    </button></div>
+            </div>
+          </section>
+        );
+      })}
+      </div>
 
       <section className="profile__registrations">
         <header className="registrations__header">
           <h3>Your Meetings</h3>
         </header>
         
-          <h2>Meetings you are Attending</h2>
+        <h2>Meetings you are Attending</h2>
 
         <div>
           {profile.reader && profile.reader.attending.map((meeting) => {
@@ -53,9 +74,11 @@ export const Profile = () => {
                 <div>{meeting.clubname}</div>
                 <div>{meeting.book.title}</div>
                 <div>{meeting.location}</div>
-                <div>
-                  {meeting.date} @ {meeting.time}
-                </div>
+                <div>{meeting.date} @ {meeting.time}</div>
+                <div><button className="delete_button" 
+                      onClick={() => leaveMeeting(meeting.id).then(() => getProfile())}>
+                      Leave
+                    </button></div>
               </div>
             );
           })}
@@ -70,10 +93,8 @@ export const Profile = () => {
                 <div>{meeting.clubname}</div>
                 <div>{meeting.book.title}</div>
                 <div>{meeting.location}</div>
-                <div>
-                  {meeting.date} @ {meeting.time}
-                </div>
-                <div><button className="" 
+                <div>{meeting.date} @ {meeting.time}</div>
+                <div><button className="update_button" 
                       onClick={() => updateMeeting(meeting.id)}>
                       Update
                     </button></div>

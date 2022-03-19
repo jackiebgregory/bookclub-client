@@ -51,7 +51,7 @@ export const MeetingForm = () => {
             required
             autoFocus
             className="form-control"
-            value={currentMeeting.clubame}
+            value={currentMeeting.clubname}
             onChange={changeMeetingState}
           />
         </div>
