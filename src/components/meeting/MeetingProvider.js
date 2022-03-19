@@ -52,12 +52,13 @@ export const MeetingProvider = (props) => {
   };
 
   const deleteMeeting = (meetingId) => {
-    return fetch(`http://localhost:8000/meetings/${meetingId}/meetings`, {
+    return fetch(`http://localhost:8000/meetings/${meetingId}`, {
       method: "DELETE",
       headers: {
         Authorization: `Token ${localStorage.getItem("bc_token")}`,
       },
     })
+      // .then((response) => response.json())
       .then(getMeetings);
   };
 
