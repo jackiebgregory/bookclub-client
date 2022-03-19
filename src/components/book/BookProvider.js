@@ -30,8 +30,19 @@ export const BookProvider = (props) => {
       .then(setBooks);
   };
 
+  const deleteBook = (bookId) => {
+    return fetch(`http://localhost:8000/books${bookId}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Token ${localStorage.getItem("bc_token")}`,
+      },
+    })
+      .then((response) => response.json())
+      .then(getBooks);
+  };
+
   return (
-    <BookContext.Provider value={{ books, getBooks, createBook }}>
+    <BookContext.Provider value={{ books, getBooks, createBook, deleteBook }}>
       {props.children}
     </BookContext.Provider>
   );
