@@ -34,15 +34,17 @@ export const Profile = () => {
         </div>
       </section>
 
+      <h2>Books You Have Added</h2>
+
       <section className="profile__registrations">
         <header className="registrations__header">
           <h3>Your Meetings</h3>
         </header>
         
-        <h2>Meetings you are Attending</h2>
+          <h2>Meetings you are Attending</h2>
 
-        {/* <div>
-          {profile.reader.attending.map((meeting) => {
+        <div>
+          {profile.reader && profile.reader.attending.map((meeting) => {
             return (
               <div key={meeting.id} className="registration">
                 <div className="registration__meeting">{meeting.book.title}</div>
@@ -53,12 +55,12 @@ export const Profile = () => {
               </div>
             );
           })}
-        </div> */}
+        </div>
 
         <h2>Meetings you are Organizing</h2>
        
-        {/* <div className="organized">
-          {profile.mymeetings.map((meeting) => {
+        <div className="organized">
+          {profile.reader && profile.mymeetings.map((meeting) => {
             return (
               <div key={meeting.id} className="registration">
                 <div className="registration__meeting">{meeting.book.title}</div>
@@ -77,7 +79,7 @@ export const Profile = () => {
               </div>
             );
           })}
-        </div> */}
+        </div>
 
       </section>
 

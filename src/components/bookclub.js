@@ -21,11 +21,11 @@ export const BookClub = () => (
     <header className="socials">
         <div className="social-icons">
         <ul>
-        <li><img src="https://www.parnassusbooks.net/sites/all/themes/contrib/santa-rosa/images/facebook.png"></img></li>
-        <li><img src="https://www.parnassusbooks.net/sites/all/themes/contrib/santa-rosa/images/twitter.png"></img></li>
-        <li><img src="https://www.parnassusbooks.net/sites/all/themes/contrib/santa-rosa/images/youtube.png"></img></li>
-        <li><img src="https://www.parnassusbooks.net/sites/all/themes/contrib/santa-rosa/images/instagram.png"></img></li>
-        <li><img src="https://www.parnassusbooks.net/sites/all/themes/contrib/santa-rosa/images/email.png"></img></li>
+        <li><img src="https://www.parnassusbooks.net/sites/all/themes/contrib/santa-rosa/images/facebook.png" alt=" text"></img></li>
+        <li><img src="https://www.parnassusbooks.net/sites/all/themes/contrib/santa-rosa/images/twitter.png" alt=" text"></img></li>
+        <li><img src="https://www.parnassusbooks.net/sites/all/themes/contrib/santa-rosa/images/youtube.png" alt=" text"></img></li>
+        <li><img src="https://www.parnassusbooks.net/sites/all/themes/contrib/santa-rosa/images/instagram.png" alt=" text"></img></li>
+        <li><img src="https://www.parnassusbooks.net/sites/all/themes/contrib/santa-rosa/images/email.png" alt=" text"></img></li>
         </ul>
         </div>
     </header>
