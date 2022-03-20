@@ -31,13 +31,13 @@ export const BookProvider = (props) => {
   };
 
   const deleteBook = (bookId) => {
-    return fetch(`http://localhost:8000/books${bookId}`, {
+    return fetch(`http://localhost:8000/books/${bookId}`, {
       method: "DELETE",
       headers: {
         Authorization: `Token ${localStorage.getItem("bc_token")}`,
       },
     })
-      .then((response) => response.json())
+      // .then((response) => response.json())
       .then(getBooks);
   };
 

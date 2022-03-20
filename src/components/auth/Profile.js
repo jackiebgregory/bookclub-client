@@ -2,12 +2,14 @@ import React, { useEffect, useContext } from "react";
 import { MeetingContext } from "../meeting/MeetingProvider.js";
 import { ProfileContext } from "./ProfileProvider.js";
 import { BookContext } from "../book/BookProvider";
+import { Navigate, useNavigate } from "react-router-dom";
 // import "./Profile.css";
 
 export const Profile = () => {
   const { profile, getProfile } = useContext(ProfileContext);
   const { deleteMeeting, updateMeeting, leaveMeeting } = useContext(MeetingContext);
-  const { books, deleteBook } = useContext(BookContext);
+  const { deleteBook } = useContext(BookContext);
+  const navigate = useNavigate;
   
 
   useEffect(() => {
@@ -44,9 +46,9 @@ export const Profile = () => {
       <h2>Books You Have Added</h2>
 
       <div>
-      {books.map((book) => {
+      {profile.reader && profile.mybooks.map((book) => {
         return (
-          <section key={`book--${book.id}`} className="book">
+          <section key={book.id} className="book">
             <div className="book__title">
               {book.title} by {book.author}
               <div>
@@ -95,7 +97,7 @@ export const Profile = () => {
                 <div>{meeting.location}</div>
                 <div>{meeting.date} @ {meeting.time}</div>
                 <div><button className="update_button" 
-                      onClick={() => updateMeeting(meeting.id)}>
+                      onClick={() => updateMeeting(meeting.id).then(() => navigate(`/meeting/${meeting.id}`))}>
                       Update
                     </button></div>
                 <div><button className="delete_button" 
