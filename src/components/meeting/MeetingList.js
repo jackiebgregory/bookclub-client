@@ -31,10 +31,10 @@ export const MeetingList = () => {
       {meetings.map((meeting) => {
               return (
                 <section key={meeting.id} className="registration">
-                  <div>{meeting.clubname}</div>
-                  <div >{meeting.book.title}</div>
-                  <div>{meeting.location}</div>
-                  <div>{meeting.date} @ {meeting.time}</div>
+                  <div>The {meeting.clubname}</div>
+                  <div>is reading {meeting.book.title}</div>
+                  <div>and meeting at {meeting.location}</div>
+                  <div>on {meeting.date} @ {meeting.time}</div>
                   {meeting.joined ? (
                     <button
                       className="btn btn-3"

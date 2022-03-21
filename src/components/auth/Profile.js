@@ -8,7 +8,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 export const Profile = () => {
   const { profile, getProfile } = useContext(ProfileContext);
   const { deleteMeeting, updateMeeting, leaveMeeting } = useContext(MeetingContext);
-  const { deleteBook } = useContext(BookContext);
+  const { updateBook, deleteBook } = useContext(BookContext);
   const navigate = useNavigate;
   
 
@@ -48,14 +48,21 @@ export const Profile = () => {
       <div>
       {profile.reader && profile.mybooks.map((book) => {
         return (
-          <section key={book.id} className="book">
+          <section key={`book--${book.id}`} className="book">
             <div className="book__title">
               {book.title} by {book.author}
               <div>
-              <button className="delete_button" 
-                      onClick={() => deleteBook(book.id).then(() => getProfile())}>
-                      Delete Book
-                    </button></div>
+                <div>
+                  <button className="update_button" 
+                        onClick={() => updateBook(book.id).then(() => navigate(`/books/${book.id}`))}>
+                        Edit Book
+                  </button>
+                </div>
+                  <button className="delete_button" 
+                          onClick={() => deleteBook(book.id).then(() => getProfile())}>
+                          Delete Book
+                  </button>
+              </div>
             </div>
           </section>
         );
@@ -72,15 +79,17 @@ export const Profile = () => {
         <div>
           {profile.reader && profile.reader.attending.map((meeting) => {
             return (
-              <div key={meeting.id} className="registration">
-                <div>{meeting.clubname}</div>
-                <div>{meeting.book.title}</div>
-                <div>{meeting.location}</div>
-                <div>{meeting.date} @ {meeting.time}</div>
-                <div><button className="delete_button" 
+              <div key={`attending--${meeting.id}`} className="registration">
+                <div>The {meeting.clubname}</div>
+                  <div>is reading {meeting.book.title}</div>
+                  <div>and meeting at {meeting.location}</div>
+                  <div>on {meeting.date} @ {meeting.time}</div>
+                <div>
+                  <button className="delete_button" 
                       onClick={() => leaveMeeting(meeting.id).then(() => getProfile())}>
                       Leave
-                    </button></div>
+                    </button>
+                </div>
               </div>
             );
           })}
@@ -91,19 +100,23 @@ export const Profile = () => {
         <div className="organized">
           {profile.reader && profile.mymeetings.map((meeting) => {
             return (
-              <div key={meeting.id} className="registration">
-                <div>{meeting.clubname}</div>
-                <div>{meeting.book.title}</div>
-                <div>{meeting.location}</div>
-                <div>{meeting.date} @ {meeting.time}</div>
-                <div><button className="update_button" 
+              <div key={`organized--${meeting.id}`} className="registration">
+                <div>The {meeting.clubname}</div>
+                  <div>is reading {meeting.book.title}</div>
+                  <div>and meeting at {meeting.location}</div>
+                  <div>on {meeting.date} @ {meeting.time}</div>
+                <div>
+                  <button className="update_button" 
                       onClick={() => updateMeeting(meeting.id).then(() => navigate(`/meeting/${meeting.id}`))}>
-                      Update
-                    </button></div>
-                <div><button className="delete_button" 
+                      Update Details
+                    </button>
+                </div>
+                <div>
+                  <button className="delete_button" 
                       onClick={() => deleteMeeting(meeting.id).then(() => getProfile())}>
-                      Cancel
-                    </button></div>
+                      Cancel Meeting
+                    </button>
+                </div>
               </div>
            )})}
         </div>
