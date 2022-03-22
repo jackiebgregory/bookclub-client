@@ -5,7 +5,11 @@
 }
 
 .btn {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+  /* font-size: 14px;
+  font-family: 'Mulish', sans-serif;
+  background-color: #557A95;
+  color: white; */ 
 }

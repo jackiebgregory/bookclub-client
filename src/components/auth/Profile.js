@@ -53,10 +53,10 @@ export const Profile = () => {
               {book.title} by {book.author}
               <div>
                 <div>
-                  <button className="update_button" 
-                        onClick={() => updateBook(book.id).then(() => navigate(`/books/${book.id}`))}>
+                  <a href = {`/books/edit/${book.id}`} className="update_button" 
+                >
                         Edit Book
-                  </button>
+                  </a>
                 </div>
                   <button className="delete_button" 
                           onClick={() => deleteBook(book.id).then(() => getProfile())}>

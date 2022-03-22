@@ -18,7 +18,7 @@ export const BookList = (props) => {
         <h2>Books</h2>
       </header>
       <button
-  className="btn btn-2 btn-sep icon-create"
+  className="btn btn-2 icon-create"
   onClick={() => {
     navigate({ pathname: "/books/new" });
   }}
