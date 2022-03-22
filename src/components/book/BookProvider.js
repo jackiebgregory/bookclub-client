@@ -30,6 +30,18 @@ export const BookProvider = (props) => {
       .then(setBooks);
   };
 
+  const updateBook = (bookId) => {
+    return fetch(`http://localhost:8000/books/${bookId}`, {
+      headers: {
+        Authorization: `Token ${localStorage.getItem("bc_token")}`,
+        'Content-Type': 'application/json'
+      },
+      method: "PUT",
+      body: JSON.stringify(books)
+    })
+    .then(getBooks);
+  };
+
   const deleteBook = (bookId) => {
     return fetch(`http://localhost:8000/books/${bookId}`, {
       method: "DELETE",
@@ -37,12 +49,11 @@ export const BookProvider = (props) => {
         Authorization: `Token ${localStorage.getItem("bc_token")}`,
       },
     })
-      // .then((response) => response.json())
       .then(getBooks);
   };
 
   return (
-    <BookContext.Provider value={{ books, getBooks, createBook, deleteBook }}>
+    <BookContext.Provider value={{ books, getBooks, createBook, updateBook, deleteBook }}>
       {props.children}
     </BookContext.Provider>
   );

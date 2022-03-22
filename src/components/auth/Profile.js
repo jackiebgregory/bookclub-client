@@ -81,9 +81,9 @@ export const Profile = () => {
             return (
               <div key={`attending--${meeting.id}`} className="registration">
                 <div>The {meeting.clubname}</div>
-                  <div>is reading {meeting.book.title}</div>
-                  <div>and meeting at {meeting.location}</div>
-                  <div>on {meeting.date} @ {meeting.time}</div>
+                <div>is reading {meeting.book.title}</div>
+                <div>and meeting at {meeting.location}</div>
+                <div>on {meeting.date} @ {meeting.time}</div>
                 <div>
                   <button className="delete_button" 
                       onClick={() => leaveMeeting(meeting.id).then(() => getProfile())}>
@@ -102,10 +102,10 @@ export const Profile = () => {
             return (
               <div key={`organized--${meeting.id}`} className="registration">
                 <div>The {meeting.clubname}</div>
-                  <div>is reading {meeting.book.title}</div>
-                  <div>and meeting at {meeting.location}</div>
-                  <div>on {meeting.date} @ {meeting.time}</div>
-                <div>
+                <div>is reading {meeting.book.title}</div>
+                <div>and meeting at {meeting.location}</div>
+                <div>on {meeting.date} @ {meeting.time}</div>
+              <div>
                   <button className="update_button" 
                       onClick={() => updateMeeting(meeting.id).then(() => navigate(`/meeting/${meeting.id}`))}>
                       Update Details
