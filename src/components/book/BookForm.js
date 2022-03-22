@@ -1,11 +1,13 @@
 import React, { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { BookContext } from "./BookProvider.js";
 import "./book.css"
 
 export const BookForm = () => {
   const navigate = useNavigate();
-  const { createBook } = useContext(BookContext);
+  const {id} = useParams();
+  const { createBook, updateBook } = useContext(BookContext);
+  
   const [currentBook, setCurrentBook] = useState({
     title: "",
     author: "",
@@ -68,8 +70,10 @@ export const BookForm = () => {
           };
 
           // Send POST request to your API
-          createBook(book).then(() => navigate("/books"));
+          if (id === undefined) {createBook(book).then(() => navigate("/books"))}
+          else updateBook(id, book).then(() => navigate("/profile"))
         }}
+
         className="btn btn-primary"
       >
         Add Book

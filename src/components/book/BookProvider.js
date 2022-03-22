@@ -30,14 +30,15 @@ export const BookProvider = (props) => {
       .then(setBooks);
   };
 
-  const updateBook = (bookId) => {
-    return fetch(`http://localhost:8000/books/${bookId}`, {
-      headers: {
+  const updateBook = (id, book) => {
+    return fetch(`http://localhost:8000/books/${id}`, {
+      
+    headers: {
         Authorization: `Token ${localStorage.getItem("bc_token")}`,
         'Content-Type': 'application/json'
       },
       method: "PUT",
-      body: JSON.stringify(books)
+      body: JSON.stringify(book)
     })
     .then(getBooks);
   };
