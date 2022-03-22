@@ -48,7 +48,7 @@ export const Profile = () => {
       <div>
       {profile.reader && profile.mybooks.map((book) => {
         return (
-          <section key={`book--${book.id}`} className="book">
+          <section key={book.id} className="book">
             <div className="book__title">
               {book.title} by {book.author}
               <div>
