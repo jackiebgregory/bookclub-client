@@ -30,6 +30,15 @@ export const BookProvider = (props) => {
       .then(setBooks);
   };
 
+  const getBookById = (id) => {
+    return fetch(`http://localhost:8000/books/${id}`, {
+      headers: {
+        Authorization: `Token ${localStorage.getItem("bc_token")}`,
+      },
+    })
+      .then((response) => response.json())
+  };
+
   const updateBook = (id, book) => {
     return fetch(`http://localhost:8000/books/${id}`, {
       
@@ -54,7 +63,7 @@ export const BookProvider = (props) => {
   };
 
   return (
-    <BookContext.Provider value={{ books, getBooks, createBook, updateBook, deleteBook }}>
+    <BookContext.Provider value={{ books, getBooks, createBook, getBookById, updateBook, deleteBook }}>
       {props.children}
     </BookContext.Provider>
   );

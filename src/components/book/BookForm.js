@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { BookContext } from "./BookProvider.js";
 import "./book.css"
@@ -6,12 +6,18 @@ import "./book.css"
 export const BookForm = () => {
   const navigate = useNavigate();
   const {id} = useParams();
-  const { createBook, updateBook } = useContext(BookContext);
+  const { createBook, updateBook, getBookById } = useContext(BookContext);
   
   const [currentBook, setCurrentBook] = useState({
     title: "",
     author: "",
   });
+
+  useEffect(() => {
+    if (id) {
+    getBookById(id).then (setCurrentBook)}
+  }, [id]);
+
 
  
   const changeBookTitleState = (event) => {

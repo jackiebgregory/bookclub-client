@@ -76,3 +76,25 @@ fieldset {
   min-width: 15rem;
   min-height: 5rem;
 }
+
+.update_button {
+  background-color: #557A95;
+  color: white;
+  padding: 5px 20px;
+  font-size: 14px!important;
+  font-weight: 500!important;
+  text-decoration: none;
+  border-radius: 30px;
+  font-family: 'Mulish', sans-serif;
+}
+
+.delete_button {
+  background-color: #F2F1F1;
+  color: #333333;
+  padding: 5px 20px;
+  font-size: 14px!important;
+  font-weight: 500!important;
+  text-decoration: none;
+  border-radius: 30px;
+  font-family: 'Mulish', sans-serif;
+}
