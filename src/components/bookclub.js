@@ -42,7 +42,7 @@ export const BookClub = () => (
     
     <footer className="footer-1">
         
-        <h3>STORE INFORMATION</h3>
+        <h4>STORE INFORMATION</h4>
         <div>
             <a className="footer-1" href="https://www.parnassusbooks.net/about-us">About Us</a>
         </div>

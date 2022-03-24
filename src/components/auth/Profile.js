@@ -25,7 +25,7 @@ export const Profile = () => {
 
       <section className="profile__info">
         <header className="profile__header">
-          <h3>Your Info</h3>
+          {/* <h3>Your Info</h3> */}
         </header>
         <div className="profile__name">
           Welcome: {profile.reader && profile.reader.user.first_name}{" "}
@@ -40,7 +40,7 @@ export const Profile = () => {
       </section>
 
       <header className=" ">
-          <h3>Your books</h3>
+          {/* <h3>Your books</h3> */}
         </header>
 
       <h2>Books You Have Added</h2>
@@ -70,7 +70,7 @@ export const Profile = () => {
 
       <section className="profile__registrations">
         <header className="registrations__header">
-          <h3>Your Meetings</h3>
+          {/* <h3>Your Meetings</h3> */}
         </header>
         
         <h2>Meetings you are Attending</h2>
