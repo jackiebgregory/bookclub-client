@@ -18,7 +18,6 @@ export const BookProvider = (props) => {
     .then((response) => response.json())
     .then(getBooks);
   };
-  
 
   const getBooks = () => {
     return fetch("http://localhost:8000/books", {

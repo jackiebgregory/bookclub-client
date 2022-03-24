@@ -53,8 +53,7 @@ export const Profile = () => {
               {book.title} by {book.author}
               <div>
                 <div>
-                  <a href = {`/books/edit/${book.id}`} className="update_button" 
-                >
+                  <a href = {`/books/edit/${book.id}`} className="update_button">
                         Edit Book
                   </a>
                 </div>
@@ -106,10 +105,9 @@ export const Profile = () => {
                 <div>and meeting at {meeting.location}</div>
                 <div>on {meeting.date} @ {meeting.time}</div>
               <div>
-                  <button className="update_button" 
-                      onClick={() => updateMeeting(meeting.id).then(() => navigate(`/meeting/${meeting.id}`))}>
-                      Update Details
-                    </button>
+                    <a href = {`/meetings/edit/${meeting.id}`} className="update_button">
+                        Update Meeting
+                  </a>
                 </div>
                 <div>
                   <button className="delete_button" 
