@@ -10,13 +10,12 @@ h2 {
   text-align: left;
   font-family: 'Mulish', sans-serif;
   padding: 10px;
-
 }
 
-/* h2 {
-  font-size: 18px;
+h3 {
   font-family: 'Mulish', sans-serif;
-} */
+  background-color: #F2F1F1;
+}
 
 ul {
   list-style: none;
