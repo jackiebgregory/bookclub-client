@@ -1,12 +1,13 @@
 import React, { useContext, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { MeetingContext } from "./MeetingProvider.js";
 import { BookContext } from "../book/BookProvider.js";
 
 
 export const MeetingForm = () => {
   const navigate = useNavigate();
-  const { createMeeting } = useContext(MeetingContext);
+  const {id} = useParams();
+  const { createMeeting, updateMeeting, getMeetingById } = useContext(MeetingContext);
   const { books, getBooks } = useContext(BookContext);
 
 
@@ -22,6 +23,13 @@ export const MeetingForm = () => {
     // Get all existing books from API
     getBooks();
   }, []);
+
+  useEffect(() => {
+    if (id) {
+    getMeetingById(id).then (setCurrentMeeting)}
+  }, [id]);  
+
+
 
   const changeMeetingState = (e) => {
     const key = e.target.name
@@ -127,8 +135,13 @@ export const MeetingForm = () => {
           };
 
           // Send POST request to API
-          createMeeting(meeting).then(() => navigate("/meetings"));
+          // createMeeting(meeting).then(() => navigate("/meetings"));
           // Once meeting is created, redirect user to meetings list
+
+          if (id === undefined) {createMeeting(meeting).then(() => navigate("/meetings"))}
+          else updateMeeting(id, meeting).then(() => navigate("/profile"))
+
+
         }}
         className="btn btn-primary"
       >

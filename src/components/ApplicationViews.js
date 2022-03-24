@@ -33,6 +33,7 @@ export const ApplicationViews = () => {
         <Routes>
             <Route path="/meetings" element={<MeetingList />}></Route>
             <Route path="/meetings/new" element={<MeetingForm />}></Route>
+            <Route path="/meetings/edit/:id" element={<MeetingForm />}></Route>
         </Routes>
         
         <Routes>

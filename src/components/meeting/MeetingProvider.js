@@ -51,14 +51,23 @@ export const MeetingProvider = (props) => {
       .then(getMeetings);
   };
 
-  const updateMeeting = (meetingId) => {
-    return fetch(`http://localhost:8000/books/${meetingId}`, {
+  const getMeetingById = (id) => {
+    return fetch(`http://localhost:8000/meetings/${id}`, {
+      headers: {
+        Authorization: `Token ${localStorage.getItem("bc_token")}`,
+      },
+    })
+      .then((response) => response.json())
+  };
+
+  const updateMeeting = (id, meeting) => {
+    return fetch(`http://localhost:8000/meetings/${id}`, {
       headers: {
         Authorization: `Token ${localStorage.getItem("bc_token")}`,
         'Content-Type': 'application/json'
       },
       method: "PUT",
-      body: JSON.stringify(meetings)
+      body: JSON.stringify(meeting)
     })
     .then(getMeetings);
   };
@@ -74,7 +83,7 @@ export const MeetingProvider = (props) => {
   };
 
   return (
-    <MeetingContext.Provider value={{ meetings, getMeetings, createMeeting, joinMeeting, leaveMeeting, updateMeeting, deleteMeeting }}>
+    <MeetingContext.Provider value={{ meetings, getMeetings, createMeeting, joinMeeting, leaveMeeting, getMeetingById, updateMeeting, deleteMeeting }}>
       {props.children}
     </MeetingContext.Provider>
   );
